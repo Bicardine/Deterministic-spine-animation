@@ -18,5 +18,4 @@ namespace Deterministic
         public Vector3 MousePosition => _camera.ScreenToWorldPoint(Input.mousePosition);
         public bool IsLongAnimPisition => MousePosition.y > _longAimPosition.position.y;
     }
-
 }

@@ -67,13 +67,13 @@ namespace Deterministic
             transform.localPosition = targetPosition;
         }
 
-        void Update()
+        private void Update()
         {
             DrawCircle();
             UpdateCursorDirection();
         }
 
-        void DrawCircle()
+        private void DrawCircle()
         {
             var angle = MathUtils.ZeroAngle;
 
