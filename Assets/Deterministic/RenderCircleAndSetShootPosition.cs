@@ -18,6 +18,8 @@ namespace Deterministic
 
         private LineRenderer _lineRenderer;
 
+        private float _previousRadius;
+
         public Vector3 PositionOnCircle { get; private set; }
 
         private const int IncreaseCegmetsCountToLoopSegments = 1;
@@ -37,6 +39,8 @@ namespace Deterministic
 
         private void Start()
         {
+            _previousRadius = _radius;
+
             _lineRenderer.positionCount = _segments + IncreaseCegmetsCountToLoopSegments;
             _lineRenderer.loop = true;
 
