@@ -3,7 +3,7 @@
 //================================================================
 using UnityEngine;
 
-namespace SpineShooter.Utils
+namespace Deterministic.Utils
 {
     public static class MathUtils
     {

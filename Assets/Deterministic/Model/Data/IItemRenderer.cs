@@ -1,7 +1,7 @@
 //================================================================
 //== [Code | Logic]: [Bicardine] ==
 //================================================================
-namespace SpineShooter.Model.Data
+namespace Deterministic.Model.Data
 {
     interface IItemRenderer<TDataType>
     {

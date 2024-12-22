@@ -4,7 +4,7 @@
 using System;
 using UnityEngine;
 
-namespace SpineShooter
+namespace Deterministic
 {
     [RequireComponent(typeof(CharacterController))]
     public class MoveXPositionComponent : MonoBehaviour

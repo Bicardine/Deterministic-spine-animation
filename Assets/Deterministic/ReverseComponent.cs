@@ -5,7 +5,7 @@ using Spine.Unity.Examples;
 using System;
 using UnityEngine;
 
-namespace SpineShooter
+namespace Deterministic
 {
     public class ReverseComponent : MonoBehaviour
     {

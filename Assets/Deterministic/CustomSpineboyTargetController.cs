@@ -5,7 +5,7 @@ using Spine;
 using Spine.Unity;
 using UnityEngine;
 
-namespace SpineShooter
+namespace Deterministic
 {
     public class CustomSpineboyTargetController : MonoBehaviour
     {

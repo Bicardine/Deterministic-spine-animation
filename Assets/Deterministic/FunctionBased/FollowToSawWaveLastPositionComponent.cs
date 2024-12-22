@@ -4,7 +4,7 @@
 //================================================================
 using UnityEngine;
 
-namespace SpineShooter.FunctionBased
+namespace Deterministic.FunctionBased
 {
     public class FollowToSawWaveLastPositionComponent : MonoBehaviour
     {

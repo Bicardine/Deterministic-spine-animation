@@ -1,10 +1,10 @@
 //================================================================
 //== [Code | Logic]: [Bicardine] ==
 //================================================================
-using SpineShooter.Utils;
+using Deterministic.Utils;
 using UnityEngine;
 
-namespace SpineShooter
+namespace Deterministic
 {
     [RequireComponent(typeof(LineRenderer))]
     public class RenderCircleAndSetShootPosition : MonoBehaviour

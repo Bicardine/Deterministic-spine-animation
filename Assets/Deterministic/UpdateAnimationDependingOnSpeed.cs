@@ -3,11 +3,11 @@
 //================================================================
 using Spine;
 using Spine.Unity;
-using SpineShooter.Utils;
+using Deterministic.Utils;
 using UnityEngine;
-using MathUtils = SpineShooter.Utils.MathUtils;
+using MathUtils = Deterministic.Utils.MathUtils;
 
-namespace SpineShooter
+namespace Deterministic
 {
     public class UpdateAnimationDependingOnSpeed : MonoBehaviour
     {

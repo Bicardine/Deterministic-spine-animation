@@ -1,10 +1,10 @@
 //================================================================
 //== [Code | Logic]: [Bicardine] ==
 //================================================================
-using SpineShooter.Model.Data;
+using Deterministic.Model.Data;
 using UnityEngine;
 
-namespace SpineShooter.MarkLine
+namespace Deterministic.MarkLine
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(Collider2D))]

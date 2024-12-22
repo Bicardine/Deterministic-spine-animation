@@ -3,7 +3,7 @@
 //================================================================
 using UnityEngine;
 
-namespace SpineShooter
+namespace Deterministic
 {
     // Instead of MonoBehaviour can use ServiceLocator or DI-Zenject or camera service for example but it's overdose for not real big project I quess.
     // So this class just for camera reference instead of /Camera.main/ and repeating ScreenToWorldPoint code. 

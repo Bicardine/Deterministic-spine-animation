@@ -1,7 +1,7 @@
 //================================================================
 //== [Code | Logic]: [Bicardine] ==
 //================================================================
-namespace SpineShooter.Utils
+namespace Deterministic.Utils
 {
     public static class SpineUtils
     {

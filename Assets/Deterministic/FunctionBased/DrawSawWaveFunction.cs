@@ -1,11 +1,11 @@
 //================================================================
 //== [Code | Logic]: [Bicardine] ==
 //================================================================
-using SpineShooter.Utils;
+using Deterministic.Utils;
 using System;
 using UnityEngine;
 
-namespace SpineShooter.FunctionBased
+namespace Deterministic.FunctionBased
 {
     [RequireComponent(typeof(LineRenderer))]
     public class DrawSawWaveFunction : MonoBehaviour
