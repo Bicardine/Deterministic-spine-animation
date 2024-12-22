@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Deterministic
 {
     [RequireComponent(typeof(CharacterController))]
-    public class MoveXPositionComponent : MonoBehaviour
+    public class MoveToXPointerPositionComponent : MonoBehaviour
     {
         [SerializeField] private PointerPosition _pointerPosition;
 
@@ -42,7 +42,9 @@ namespace Deterministic
             var mousePosition = _pointerPosition.MousePosition;
             var distance = mousePosition.x - transform.position.x;
 
-            if (Mathf.Abs(distance) > MinDistanceToAcceleration)
+            var shouldAcceleration = Mathf.Abs(distance) > MinDistanceToAcceleration;
+
+            if (shouldAcceleration)
                 _currentSpeed = Mathf.MoveTowards(_currentSpeed, _maxSpeed * Mathf.Sign(distance), _acceleration * Time.deltaTime);
             else
                 _currentSpeed = Mathf.MoveTowards(_currentSpeed, TargetOnDeceleration, _deceleration * Time.deltaTime);

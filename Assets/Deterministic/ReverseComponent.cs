@@ -10,7 +10,7 @@ namespace Deterministic
     public class ReverseComponent : MonoBehaviour
     {
         [SerializeField] private PointerPosition _pointerPosition;
-        [SerializeField] private MoveXPositionComponent _moveXPosition;
+        [SerializeField] private MoveToXPointerPositionComponent _moveXPosition;
         [SerializeField] private UpdateAnimationDependingOnSpeed _updateAnimationDependingOnSpeed;
         [SerializeField] private SpineboyBeginnerModel _spineBoyModel;
 

@@ -13,7 +13,7 @@ namespace Deterministic
     {
         [SerializeField] private float _runDelta;
         [SerializeField] private PointerPosition _pointerPosition;
-        [SerializeField] private MoveXPositionComponent _moveXPositionComponent;
+        [SerializeField] private MoveToXPointerPositionComponent _moveXPositionComponent;
 
         [SerializeField] private SkeletonAnimation _skeleton;
         [SerializeField] private ReverseComponent _reverseComponent;
