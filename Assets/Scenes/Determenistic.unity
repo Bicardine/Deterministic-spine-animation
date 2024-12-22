@@ -6651,7 +6651,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1763790002}
-  - component: {fileID: 1763790001}
   - component: {fileID: 1763790004}
   - component: {fileID: 1763790008}
   - component: {fileID: 1763790003}
@@ -6664,22 +6663,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1763790001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763790000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f999dde27e9711a45b0ee1b0d25217ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  facingLeft: 0
-  currentSpeed: 0
-  shootInterval: 0.15
 --- !u!4 &1763790002
 Transform:
   m_ObjectHideFlags: 0
