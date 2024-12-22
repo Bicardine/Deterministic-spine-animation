@@ -18,8 +18,6 @@ namespace Deterministic
 
         private LineRenderer _lineRenderer;
 
-        private float _previousRadius;
-
         public Vector3 PositionOnCircle { get; private set; }
 
         private const int IncreaseCegmetsCountToLoopSegments = 1;
@@ -37,16 +35,6 @@ namespace Deterministic
             _lineRenderer = GetComponent<LineRenderer>();
         }
 
-        private void Start()
-        {
-            _previousRadius = _radius;
-
-            _lineRenderer.positionCount = _segments + IncreaseCegmetsCountToLoopSegments;
-            _lineRenderer.loop = true;
-
-            DrawCircle();
-        }
-
         private void OnEnable()
         {
             _reverseComponent.OnReverse += OnReverse;
@@ -57,6 +45,19 @@ namespace Deterministic
             _reverseComponent.OnReverse -= OnReverse;
         }
 
+        private void Start()
+        {
+            _lineRenderer.positionCount = _segments + IncreaseCegmetsCountToLoopSegments;
+            _lineRenderer.loop = true;
+
+            DrawCircle();
+        }
+
+        private void Update()
+        {
+            DrawCircle();
+            UpdateCursorDirection();
+        }
         private void OnReverse()
         {
             ChangePosition();
@@ -69,12 +70,6 @@ namespace Deterministic
             targetPosition.x = reversedX;
 
             transform.localPosition = targetPosition;
-        }
-
-        private void Update()
-        {
-            DrawCircle();
-            UpdateCursorDirection();
         }
 
         private void DrawCircle()
