@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 150232568}
   - component: {fileID: 150232567}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: PointerDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,30 +785,13 @@ GameObject:
   - component: {fileID: 488596510}
   - component: {fileID: 488596509}
   - component: {fileID: 488596514}
-  - component: {fileID: 488596508}
-  - component: {fileID: 488596513}
   m_Layer: 0
-  m_Name: CustomSpineBoy
+  m_Name: SpineBoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &488596508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488596507}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af275876c7b01264b85161629a9bc217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skeletonAnimation: {fileID: 488596509}
-  boneName: crosshair
-  cam: {fileID: 1871277315}
 --- !u!114 &488596509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,32 +901,6 @@ Transform:
   - {fileID: 1417523510}
   m_Father: {fileID: 1763790002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &488596513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488596507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59f510ae90fd1a419f19ed805e6e229, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 1763790001}
-  skeletonAnimation: {fileID: 488596509}
-  run: {fileID: 11400000, guid: 2306a35ff764bd046a5d5a82eb07363e, type: 2}
-  idle: {fileID: 11400000, guid: 0517fdd24cd17be438984833e2cd3045, type: 2}
-  aim: {fileID: 11400000, guid: 845885c38d8cfea44b663ec591350733, type: 2}
-  shoot: {fileID: 11400000, guid: e0fef5f66da7d5e4b959716bea8ffb08, type: 2}
-  jump: {fileID: 11400000, guid: d5155b4c06023cd48aca39e850cd227a, type: 2}
-  footstepEvent: {fileID: 11400000, guid: 910b84ab2bcf7cc428f4a27a81bbe44b, type: 2}
-  footstepPitchOffset: 0.2
-  gunsoundPitchOffset: 0.13
-  footstepSource: {fileID: 1357681599}
-  gunSource: {fileID: 292011845}
-  jumpSource: {fileID: 2008949269}
-  gunParticles: {fileID: 1417523507}
 --- !u!114 &488596514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,7 +917,6 @@ MonoBehaviour:
   _render: {fileID: 1876794058}
   _skeletonAnimation: {fileID: 488596509}
   boneName: crosshair
-  cam: {fileID: 1871277315}
 --- !u!1 &815751413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,55 +1475,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1127768616
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1127768618}
-  - component: {fileID: 1127768617}
-  m_Layer: 0
-  m_Name: PLAYER INPUT
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1127768617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127768616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f685123e0610c347a7b2c03c8a19535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalAxis: Horizontal
-  attackButton: Fire1
-  aimButton: Fire2
-  jumpButton: Jump
-  model: {fileID: 1763790001}
---- !u!4 &1127768618
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127768616}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.17485, y: 3.7365427, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2120805546}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357681598
 GameObject:
   m_ObjectHideFlags: 0
@@ -6746,10 +6653,10 @@ GameObject:
   - component: {fileID: 1763790002}
   - component: {fileID: 1763790001}
   - component: {fileID: 1763790004}
+  - component: {fileID: 1763790008}
   - component: {fileID: 1763790003}
   - component: {fileID: 1763790005}
   - component: {fileID: 1763790007}
-  - component: {fileID: 1763790006}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -6845,6 +6752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95fab546c94d5447b455ae12e5276eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _readHeroInput: {fileID: 1763790008}
   _runDelta: 5
   _pointerPosition: {fileID: 246119574}
   _moveXPositionComponent: {fileID: 1763790003}
@@ -6854,21 +6762,10 @@ MonoBehaviour:
   _idleAnimation: {fileID: 11400000, guid: 0517fdd24cd17be438984833e2cd3045, type: 2}
   _walkAnimation: {fileID: 11400000, guid: dffc08b44a9472f4b9f8a41e4845676c, type: 2}
   _runAnimation: {fileID: 11400000, guid: 2306a35ff764bd046a5d5a82eb07363e, type: 2}
+  _aimAnimation: {fileID: 11400000, guid: 845885c38d8cfea44b663ec591350733, type: 2}
   _velocityToMovingAnimation: 0
   _runAnimationFrequency: 0.5
   _walkAnimationFrequency: 1
---- !u!114 &1763790006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763790000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c53f215446e991e43bd87a9894f3b805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1763790007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6881,10 +6778,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da824aec38bd0f642b50563a71abddb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skeleton: {fileID: 488596509}
   _pointerPosition: {fileID: 246119574}
   _moveXPosition: {fileID: 1763790003}
   _updateAnimationDependingOnSpeed: {fileID: 1763790005}
-  _spineBoyModel: {fileID: 1763790001}
+  _readHeroInput: {fileID: 1763790008}
+--- !u!114 &1763790008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763790000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72f0b33679528d48adb3c72348d962e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1871277314
 GameObject:
   m_ObjectHideFlags: 0
@@ -6998,7 +6908,7 @@ GameObject:
   - component: {fileID: 1876794058}
   - component: {fileID: 1876794060}
   m_Layer: 0
-  m_Name: Render
+  m_Name: RenderCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7468,38 +7378,6 @@ Transform:
   - {fileID: 981056853}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2120805545
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2120805546}
-  m_Layer: 0
-  m_Name: Default(fromx ex)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2120805546
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120805545}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1127768618}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7511,4 +7389,3 @@ SceneRoots:
   - {fileID: 828443041}
   - {fileID: 110927788}
   - {fileID: 246119575}
-  - {fileID: 2120805546}

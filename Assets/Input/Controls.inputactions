@@ -1,0 +1,34 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Hero",
+            "id": "f470762f-0371-489c-8a64-a1281f44d7b4",
+            "actions": [
+                {
+                    "name": "Aim",
+                    "type": "Button",
+                    "id": "f4a11159-0c40-49c0-93ca-b1bfba1781d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "46108894-8366-4d72-bb2f-5224b5988be7",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

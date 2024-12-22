@@ -1,6 +1,7 @@
 //================================================================
 //== [Code | Logic]: [Bicardine] ==
 //================================================================
+using Spine.Unity;
 using Spine.Unity.Examples;
 using System;
 using UnityEngine;
@@ -9,27 +10,30 @@ namespace Deterministic
 {
     public class ReverseComponent : MonoBehaviour
     {
+        [SerializeField] private SkeletonAnimation _skeleton;
         [SerializeField] private PointerPosition _pointerPosition;
         [SerializeField] private MoveToXPointerPositionComponent _moveXPosition;
         [SerializeField] private UpdateAnimationDependingOnSpeed _updateAnimationDependingOnSpeed;
-        [SerializeField] private SpineboyBeginnerModel _spineBoyModel;
+        [SerializeField] private ReadHeroInput _readHeroInput;
 
+        private bool _isFacingLeft;
         private bool _isAiming;
 
         public event Action OnReverse;
 
         private const float VelocityLoverValueToReverseFace = 0.1f;
+        private const float ScaleXMultiplierOnRevese = -1;
 
         private void OnEnable()
         {
-            _spineBoyModel.StartAimEvent += OnStartAim;
-            _spineBoyModel.StopAimEvent += OnStopAim;
+            _readHeroInput.OnAimStarted += OnAimStarted;
+            _readHeroInput.OnAimEnded += OnAimEnded;
         }
 
         private void OnDisable()
         {
-            _spineBoyModel.StartAimEvent -= OnStartAim;
-            _spineBoyModel.StopAimEvent -= OnStopAim;
+            _readHeroInput.OnAimStarted -= OnAimStarted;
+            _readHeroInput.OnAimEnded -= OnAimEnded;
         }
 
         private void Update()
@@ -37,9 +41,9 @@ namespace Deterministic
             TryReverseFacing();
         }
 
-        private void OnStartAim() => _isAiming = true;
+        private void OnAimStarted() => _isAiming = true;
 
-        private void OnStopAim() => _isAiming = false;
+        private void OnAimEnded() => _isAiming = false;
 
         private void TryReverseFacing()
         {
@@ -47,13 +51,15 @@ namespace Deterministic
                 ReverseFacing();
         }
 
-        private bool NeedReverseFacing() => (_pointerPosition.IsMouseToTheLeft != _spineBoyModel.facingLeft) && _isAiming;
+        private bool NeedReverseFacing() => (_pointerPosition.IsMouseToTheLeft != _isFacingLeft) && _isAiming;
 
         private void ReverseFacing()
         {
-            _spineBoyModel.facingLeft = !_spineBoyModel.facingLeft;
+            _isFacingLeft = !_isFacingLeft;
 
             _updateAnimationDependingOnSpeed.SetIdleAnimation();
+
+            _skeleton.Skeleton.ScaleX *= ScaleXMultiplierOnRevese;
 
             OnReverse?.Invoke();
         }

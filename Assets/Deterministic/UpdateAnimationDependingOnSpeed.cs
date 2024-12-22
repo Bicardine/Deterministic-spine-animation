@@ -6,11 +6,12 @@ using Spine.Unity;
 using Deterministic.Utils;
 using UnityEngine;
 using MathUtils = Deterministic.Utils.MathUtils;
-
 namespace Deterministic
 {
     public class UpdateAnimationDependingOnSpeed : MonoBehaviour
     {
+        [SerializeField] private ReadHeroInput _readHeroInput;
+
         [SerializeField] private float _runDelta;
         [SerializeField] private PointerPosition _pointerPosition;
         [SerializeField] private MoveToXPointerPositionComponent _moveXPositionComponent;
@@ -23,6 +24,7 @@ namespace Deterministic
         [SerializeField] private AnimationReferenceAsset _idleAnimation;
         [SerializeField] private AnimationReferenceAsset _walkAnimation;
         [SerializeField] private AnimationReferenceAsset _runAnimation;
+        [SerializeField] private AnimationReferenceAsset _aimAnimation;
 
         [SerializeField][Range(0f, 10f)] private float _velocityToMovingAnimation = 0f;
         [SerializeField][Range(0.1f, 10f)] private float _runAnimationFrequency = 0.5f;
@@ -49,11 +51,17 @@ namespace Deterministic
 
         private void OnEnable()
         {
+            _readHeroInput.OnAimStarted += StartAim;
+            _readHeroInput.OnAimEnded += StopAim;
+
             _reverseComponent.OnReverse += OnReverse;
         }
 
         private void OnDisable()
         {
+            _readHeroInput.OnAimStarted -= StartAim;
+            _readHeroInput.OnAimEnded -= StopAim;
+
             _reverseComponent.OnReverse -= OnReverse;
         }
 
@@ -65,6 +73,18 @@ namespace Deterministic
         public void SetIdleAnimation()
         {
             SetAnimation(SpineUtils.ZeroTrackIndex, _idleTurnAnimation, false);
+        }
+
+        private void StartAim()
+        {
+            var aimTrack = SetAnimation(2, _aimAnimation, true);
+            aimTrack.AttachmentThreshold = 1f;
+            aimTrack.MixDuration = 0f;
+        }
+
+        private void StopAim()
+        {
+            AnimationState.AddEmptyAnimation(2, 0.5f, 0.1f);
         }
 
         private void OnReverse() => _reverse = !_reverse;

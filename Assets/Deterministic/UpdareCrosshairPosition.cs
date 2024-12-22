@@ -7,19 +7,19 @@ using UnityEngine;
 
 namespace Deterministic
 {
-    public class CustomSpineboyTargetController : MonoBehaviour
+    public class UpdareCrosshairPosition : MonoBehaviour
     {
         [SerializeField] private PointerPosition _pointerPosition;
         [SerializeField] private RenderCircleAndSetShootPosition _render;
         [SerializeField] private SkeletonAnimation _skeletonAnimation;
 
+        [SerializeField]
         [SpineBone(dataField: nameof(_skeletonAnimation))]
-        public string boneName;
-        public Camera cam;
+        private string boneName;
 
         private Bone _bone;
 
-        void OnValidate()
+        private void OnValidate()
         {
             if (_skeletonAnimation == null)
                 _skeletonAnimation = GetComponent<SkeletonAnimation>();
